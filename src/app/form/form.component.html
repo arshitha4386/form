@@ -1,0 +1,93 @@
+<div class="card fo">
+    <div class="row mar">
+        <div class="col-md-4 col-1"></div>
+        
+        <div class="col-md-4 col-10 border border-white back sha">
+            <form [formGroup] = "userForm">
+                <div class="form-row border border-success back1 text-center text-white" style="height: 100px;">
+                  <h4 class="mt-4"><b>Registration Form</b></h4>
+                </div>
+                <div class="mt-2">
+                    <div class="form-row ">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                           <!--  <label for="">Name</label> -->
+                            </div>
+                            <div class="form-group">
+                                <div class="col">
+                                  <input type="text" formControlName="name" class="form-control shadow-none" placeholder="Name" >
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                           <!--  <label for="">Email</label> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col mt-2">
+                                <input type="text" formControlName="email" class="form-control shadow-none" placeholder="Email" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <label for="">Phone</label> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col mt-2">
+                                <input type="text" formControlName="phone" class="form-control shadow-none" placeholder="Phone" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <label for="">Address</label> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col mt-2">
+                                <input type="text" formControlName="address" class="form-control shadow-none" placeholder="Address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-4">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-success mb-4" (click)="addItem()"> Add </button>
+                            <button type="button" class="btn btn-success ms-3 mb-4" (click)="Reset()"> Reset </button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4 col-1"></div>
+    </div>
+   <div class="row mt-5">
+    <div class="col-md-2 col-1"></div>
+    <div class="col-md-8 col-10 mt-4 mb-4" style="overflow-x:auto;">
+        <table class="table table-bordered back sha">
+            <thead>
+                <tr class="back1 text-white">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listData">
+                    <td> <span>{{item.name}}</span></td>
+                    <td> <span>{{item.email}}</span></td>
+                    <td> <span>{{item.phone}}</span></td>
+                    <td> <span>{{item.address}}</span></td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="RemoveItem(item)"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2 col-1"></div>
+   </div>
+</div>
